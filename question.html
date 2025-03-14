@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - الأسئلة الشائعة</title>
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Prevent scrollbars */
+        html, body {
+            overflow: hidden;
+            max-width: 100%;
+            height: 100vh;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8fbff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Center content */
+            direction: rtl; /* Right-to-left support */
+        }
+
+        .faq-container {
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-height: 90vh; /* Prevent page overflow */
+            overflow-y: auto; /* Enable scrolling within the FAQ box if needed */
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .faq-question {
+            background: #f3f4f6;
+            color: #333;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 14px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .faq-question:hover {
+            background: #e0e0e0;
+        }
+
+        .faq-answer {
+            padding: 15px;
+            display: none;
+            font-size: 14px;
+            line-height: 1.6;
+            background: white;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-button {
+            transform: rotate(180deg);
+        }
+
+        /* Styling for the colored collapse button */
+        .faq-button {
+            padding: 8px;
+            border-radius: 50%;
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Assign different colors to each button */
+        .faq-item:nth-child(1) .faq-button { background: #ff9800; }
+        .faq-item:nth-child(2) .faq-button { background: #4caf50; }
+        .faq-item:nth-child(3) .faq-button { background: #3f51b5; }
+        .faq-item:nth-child(4) .faq-button { background: #03a9f4; }
+        .faq-item:nth-child(5) .faq-button { background: #9c27b0; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .faq-container {
+                width: 100%;
+            }
+            .faq-question {
+                font-size: 14px;
+            }
+            .faq-answer {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="faq-container">
+        <h2 class="faq-title">FAQs - الأسئلة الشائعة</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>ما هي الفئات العمرية التي تستطيع الاستفادة مما تقدمونه؟</span>
+                <span class="faq-button">▼</span>
+            </div>
+            <div class="faq-answer">
+                دوراتنا التدريبية مصممة للأعمار بين 7-17 عامًا، وتراعي مستويات مختلفة لتناسب جميع الطلاب، سواء كانوا مبتدئين أو محترفين.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>ما هي لغة السكراتش؟ وما فائدة تعليمها للأطفال؟</span>
+                <span class="faq-button">▼</span>
+            </div>
+            <div class="faq-answer">
+                لغة سكراتش هي بيئة برمجية مرئية مصممة لتعليم الأطفال أساسيات البرمجة بطريقة ممتعة وسهلة.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>ماذا يتعلم الأبناء في دروس تطوير مواقع الويب؟</span>
+                <span class="faq-button">▼</span>
+            </div>
+            <div class="faq-answer">
+                يتعلم الأطفال أساسيات HTML, CSS, JavaScript لإنشاء وتصميم مواقع ويب تفاعلية.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>هل البرمجة دائمة للأطفال؟ وماذا يتعلمون منها؟</span>
+                <span class="faq-button">▼</span>
+            </div>
+            <div class="faq-answer">
+                نعم، البرمجة تساعد الأطفال على تطوير مهارات التفكير المنطقي وحل المشكلات، مما يفيدهم مدى الحياة.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>هل يمكنني الحصول على جلسة مجانية لتجربة الدورة؟</span>
+                <span class="faq-button">▼</span>
+            </div>
+            <div class="faq-answer">
+                نعم، نقدم جلسات تجريبية مجانية للطلاب المهتمين قبل التسجيل.
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelectorAll(".faq-question").forEach(item => {
+            item.addEventListener("click", function () {
+                const parent = this.parentNode;
+                parent.classList.toggle("active");
+            });
+        });
+    </script>
+
+</body>
+</html>
