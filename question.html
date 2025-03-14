@@ -120,7 +120,14 @@
         }
     </style>
 </head>
-
+<script>
+  function sendHeight() {
+      const height = document.documentElement.scrollHeight;
+      window.parent.postMessage({ frameHeight: height }, "*");
+  }
+  window.onload = sendHeight;
+  window.onresize = sendHeight;
+</script>
 <body>
 
     <div class="faq-container">
